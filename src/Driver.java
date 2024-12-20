@@ -21,6 +21,7 @@ public class Driver {
 		Everything Everything = new Everything(bgColor,vidselection);
 
 		frame.add(Everything);
+		frame.setTitle("Mootube");
 		int shade = 0;
 
 		/* 
