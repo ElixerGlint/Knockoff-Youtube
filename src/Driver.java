@@ -36,12 +36,12 @@ public class Driver {
 		*/
 
 		
+		
+		Everything.setBg(temp);
 		frame.setVisible(true);
 
-
-
 		while(true) {
-			Everything.setBg(temp);
+			
 			
 			frame.repaint();
 		}

@@ -1,31 +1,44 @@
-import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.*;
 import javax.swing.JPanel;
 
 public class Everything extends JPanel {
-	private int moonWidth; private Color bg;
-	
+	private Color bg;
+
 	public Everything(int mw, Color c, int sCount) {
-		moonWidth = mw; bg= c;
+		bg= c;
 		this.setBackground(bg);
 		
 	}
 
-	public void paintComponent(Graphics g) {
+	public void paintComponent(Graphics g) { //paints the browser box
 		super.paintComponent(g);
 		this.setBackground(bg);
-		g.setColor(Color.yellow);
-		g.drawOval(0, 0, moonWidth, moonWidth);
+		printoutline(g);
+	}
+
+	private void printoutline(Graphics g) {
 		g.setColor(Color.darkGray);
-		g.fillOval(0, 0, moonWidth, moonWidth);
-		
+		g.drawRect(0, 0, 985, 20); //bottom line
+		g.setColor(Color.gray);
+		g.fillRect(0, 0, 985, 20); //filling the bar
+		g.setColor(Color.RED);
+		g.fillRect(935, 0, 50, 20); //red
+		g.setColor(Color.YELLOW);
+		g.fillRect(885, 0, 50, 20); //yellow
+		g.setColor(Color.lightGray);
+		g.fillRect(835, 0, 50, 20); //gray
+		g.setColor(Color.BLACK);
+		g.drawLine(855, 10, 865, 10); //minimize line
+		g.drawRect(905, 5, 10, 10); //fullscrene square
+		g.drawLine(955, 5, 965, 15); //1/2 of the X
+		g.drawLine(955, 15, 965, 5); //1/2 of the X
+
+		g.setFont(new Font("Arial", Font.PLAIN, 20)); //URL
+		g.setColor(Color.BLACK); 
+		g.drawString("https://www.youtube.com/watch?v=zqOGDO-kSpE", 1, 17); 
 	}
-	public int getMoonWidth() {
-		return moonWidth;
-	}
-	public void setMoonWidth(int moonWidth) {
-		this.moonWidth = moonWidth;
-	}
+
+	
 	public Color getBg() {
 		return bg;
 	}
