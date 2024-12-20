@@ -42,7 +42,12 @@ public class Everything extends JPanel {
 		if(whichvid == 1)
 		g.drawString("https://www.youtube.com/watch?v=zqOGDO-kSpE", 1, 17); 
 
-		
+		if(whichvid == 2)
+		g.drawString("https://www.youtube.com/watch?v=xjvaHlji7Jo", 1, 17); 
+
+		if(whichvid == 3)
+		g.drawString("https://www.youtube.com/watch?v=q58dLWjRTBE&t=477s", 1, 17); 
+
 	}
 
 	
