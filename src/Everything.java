@@ -17,6 +17,8 @@ public class Everything extends JPanel {
 		super.paintComponent(g);
 		this.setBackground(bg);
 		printoutline(g);
+		drawcomments(g);
+		drawvideobox(g);
 	}
 
 	private void printoutline(Graphics g) {
@@ -36,11 +38,7 @@ public class Everything extends JPanel {
 		g.drawLine(955, 5, 965, 15); //1/2 of the X
 		g.drawLine(955, 15, 965, 5); //1/2 of the X
 
-		g.setColor(Color.black);
-		g.fillRect(10, 30, 700, 400); //video box
-
-		g.setColor(Color.lightGray);
-		g.fillRect(10, 440, 700, 310); //fullscrene square
+		
 
 		g.setFont(new Font("Arial", Font.PLAIN, 20)); //URL
 		g.setColor(Color.BLACK); 
@@ -53,8 +51,21 @@ public class Everything extends JPanel {
 
 		if(whichvid == 3)
 		g.drawString("https://www.mootube.com/watch?v=q58dLWjRTBE&t=477s", 1, 17); 
+	}
 
-		g.drawString("Comments:", 11, 460); 
+	private void drawcomments(Graphics g) {
+		g.setColor(Color.lightGray);
+		g.fillRect(10, 440, 700, 310); //fullscrene square
+
+		g.setFont(new Font("Arial", Font.PLAIN, 20)); //URL
+		g.setColor(Color.BLACK); 
+
+		g.drawString("Comments:", 11, 460);
+	}
+
+	private void drawvideobox(Graphics g) {
+		g.setColor(Color.black);
+		g.fillRect(10, 30, 700, 400); //video box
 	}
 
 	
