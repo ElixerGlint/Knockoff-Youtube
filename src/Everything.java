@@ -1,23 +1,14 @@
-
+import java.awt.Color;
+import java.awt.Graphics;
 import javax.swing.JPanel;
 
 public class Everything extends JPanel {
-    /* 
-	Sparkler[] sparkles;
 	private int moonWidth; private Color bg;
-	public NewYear(int mw, Color c, int sCount) {
+	
+	public Everything(int mw, Color c, int sCount) {
 		moonWidth = mw; bg= c;
 		this.setBackground(bg);
-		sparkles = new Sparkler[sCount];
-		for(int i = 0; i<sparkles.length;i++) {
-			sparkles[i] = new Sparkler(i*50,700,i);
-		}
-	}
-
-	public void changey(int Ychoord) {
-		for(Sparkler s: sparkles) {
-			s.setY(Ychoord);
-		}
+		
 	}
 
 	public void paintComponent(Graphics g) {
@@ -27,8 +18,7 @@ public class Everything extends JPanel {
 		g.drawOval(0, 0, moonWidth, moonWidth);
 		g.setColor(Color.darkGray);
 		g.fillOval(0, 0, moonWidth, moonWidth);
-		for(Sparkler s:sparkles)
-			s.drawSparkler(g);
+		
 	}
 	public int getMoonWidth() {
 		return moonWidth;
@@ -41,11 +31,5 @@ public class Everything extends JPanel {
 	}
 	public void setBg(Color bg) {
 		this.bg = bg;
-	}
-*/
-
-
-	public void printall() {
-		
 	}
 }
