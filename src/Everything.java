@@ -21,6 +21,10 @@ public class Everything extends JPanel {
 		drawvideobox(g);
 	}
 
+
+
+
+	
 	private void printoutline(Graphics g) {
 		g.setColor(Color.darkGray);
 		g.drawRect(0, 0, 985, 20); //bottom line
