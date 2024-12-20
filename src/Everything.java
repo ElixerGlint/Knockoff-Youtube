@@ -1,7 +1,4 @@
 
-import java.awt.Color;
-import java.awt.Graphics;
-
 import javax.swing.JPanel;
 
 public class Everything extends JPanel {
@@ -47,4 +44,8 @@ public class Everything extends JPanel {
 	}
 */
 
+
+	public void printall() {
+		
+	}
 }

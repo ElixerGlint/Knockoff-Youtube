@@ -1,9 +1,7 @@
-import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.JColorChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JSlider;
 
 public class aDriver {
     public static void main(String[] args) throws Exception {
@@ -25,6 +23,9 @@ public class aDriver {
 
 		Everything Screen = new Everything();
 
+		frame.add(Screen);
+
+		frame.show(true);
         /* 
 		frame.add(MMXXV);
 		int shade = 0;
