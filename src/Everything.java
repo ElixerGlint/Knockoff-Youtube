@@ -3,12 +3,15 @@ import javax.swing.JPanel;
 
 public class Everything extends JPanel {
 	private Color bg;
+	private int whichvid;
 
-	public Everything(int mw, Color c, int sCount) {
-		bg= c;
+	public Everything(Color c, int watvid) {
+		bg = c;
 		this.setBackground(bg);
-		
+		whichvid = watvid;
 	}
+
+
 
 	public void paintComponent(Graphics g) { //paints the browser box
 		super.paintComponent(g);
@@ -35,7 +38,11 @@ public class Everything extends JPanel {
 
 		g.setFont(new Font("Arial", Font.PLAIN, 20)); //URL
 		g.setColor(Color.BLACK); 
+
+		if(whichvid == 1)
 		g.drawString("https://www.youtube.com/watch?v=zqOGDO-kSpE", 1, 17); 
+
+		
 	}
 
 	
