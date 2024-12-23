@@ -50,19 +50,19 @@ public class Everything extends JPanel {
 
 		if(whichvid == 1) {
 			g.drawString("https://www.mootube.com/watch?v=zqOGDO-kSpE", 1, 17); 
-			g.drawString("Merry Christmas!", 11, 462); 
+			g.drawString("Merry Christmas! - Santa Clause", 11, 462); 
 		}
 		
 
 		if(whichvid == 2) {
 			g.drawString("https://www.mootube.com/watch?v=xjvaHlji7Jo", 1, 17); 
-			g.drawString("Happy New Year!", 11, 462); 
+			g.drawString("Happy New Year! - The New Year Man", 11, 462); 
 		}
 		
 
 		if(whichvid == 3) {
 			g.drawString("https://www.mootube.com/watch?v=q58dLWjRTBE&t=477s", 1, 17); 
-			g.drawString("Happy Holidays! - Cody Henrichsen", 11, 462); 
+			g.drawString("Happy Holidays! - Glastonbury High School", 11, 462); 
 		}
 		
 
