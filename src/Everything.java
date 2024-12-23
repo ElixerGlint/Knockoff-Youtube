@@ -17,8 +17,9 @@ public class Everything extends JPanel {
 		super.paintComponent(g);
 		this.setBackground(bg);
 		printoutline(g);
-		drawcomments(g);
+		drawdesc(g);
 		drawvideobox(g);
+		drawcomments(g);
 	}
 
 
@@ -67,15 +68,27 @@ public class Everything extends JPanel {
 		
 	}
 
-
 	private void drawcomments(Graphics g) {
+		g.setColor(Color.lightGray);
+		g.fillRect(720, 30, 260, 720); //comments square
+
+		g.setFont(new Font("Arial", Font.PLAIN, 20)); //URL
+		g.setColor(Color.BLACK); 
+
+		g.drawString("Comments:", 721, 50); 
+	}
+
+
+
+
+	private void drawdesc(Graphics g) {
 		g.setColor(Color.lightGray);
 		g.fillRect(10, 440 + 40, 700, 270); //fullscrene square
 
 		g.setFont(new Font("Arial", Font.PLAIN, 20)); //URL
 		g.setColor(Color.BLACK); 
 
-		g.drawString("Comments:", 11, 460 + 40);
+		g.drawString("Description:", 11, 460 + 40);
 	}
 
 	private void drawvideobox(Graphics g) {
