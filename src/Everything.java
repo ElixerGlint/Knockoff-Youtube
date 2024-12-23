@@ -65,9 +65,6 @@ public class Everything extends JPanel {
 			g.drawString("Happy Holidays! - Glastonbury High School", 11, 462); 
 		}
 		
-
-
-
 	}
 
 
