@@ -31,7 +31,7 @@ public class Driver {
 		yslider.setPaintLabels(true);
 		yslider.setInverted(true);
 
-		frame.add(yslider,BorderLayout.EAST);
+		frame.add(yslider,BorderLayout.WEST);
 		*/
 
 		

@@ -42,29 +42,43 @@ public class Everything extends JPanel {
 		g.drawLine(955, 5, 965, 15); //1/2 of the X
 		g.drawLine(955, 15, 965, 5); //1/2 of the X
 
-		
+		g.setColor(Color.gray); //Making the video title
+		g.fillRect(10, 440, 700, 30); //title square
 
 		g.setFont(new Font("Arial", Font.PLAIN, 20)); //URL
 		g.setColor(Color.BLACK); 
 
-		if(whichvid == 1)
-		g.drawString("https://www.mootube.com/watch?v=zqOGDO-kSpE", 1, 17); 
+		if(whichvid == 1) {
+			g.drawString("https://www.mootube.com/watch?v=zqOGDO-kSpE", 1, 17); 
+			g.drawString("Merry Christmas!", 11, 462); 
+		}
+		
 
-		if(whichvid == 2)
-		g.drawString("https://www.mootube.com/watch?v=xjvaHlji7Jo", 1, 17); 
+		if(whichvid == 2) {
+			g.drawString("https://www.mootube.com/watch?v=xjvaHlji7Jo", 1, 17); 
+			g.drawString("Happy New Year!", 11, 462); 
+		}
+		
 
-		if(whichvid == 3)
-		g.drawString("https://www.mootube.com/watch?v=q58dLWjRTBE&t=477s", 1, 17); 
+		if(whichvid == 3) {
+			g.drawString("https://www.mootube.com/watch?v=q58dLWjRTBE&t=477s", 1, 17); 
+			g.drawString("Happy Holidays! - Cody Henrichsen", 11, 462); 
+		}
+		
+
+
+
 	}
+
 
 	private void drawcomments(Graphics g) {
 		g.setColor(Color.lightGray);
-		g.fillRect(10, 440, 700, 310); //fullscrene square
+		g.fillRect(10, 440 + 40, 700, 270); //fullscrene square
 
 		g.setFont(new Font("Arial", Font.PLAIN, 20)); //URL
 		g.setColor(Color.BLACK); 
 
-		g.drawString("Comments:", 11, 460);
+		g.drawString("Comments:", 11, 460 + 40);
 	}
 
 	private void drawvideobox(Graphics g) {
