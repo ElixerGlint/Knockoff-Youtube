@@ -1,11 +1,11 @@
 import java.awt.*;
 import javax.swing.JPanel;
 
-public class Everything extends JPanel {
+public class Panel extends JPanel {
 	private Color bg;
 	private int whichvid;
 
-	public Everything(Color c, int watvid) {
+	public Panel(Color c, int watvid) {
 		bg = c;
 		this.setBackground(bg);
 		whichvid = watvid;
@@ -76,6 +76,9 @@ public class Everything extends JPanel {
 		g.setColor(Color.BLACK); 
 
 		g.drawString("Comments:", 721, 50); 
+
+		//use a doc to store all of the comments
+		
 	}
 
 
