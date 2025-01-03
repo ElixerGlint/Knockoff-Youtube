@@ -1,14 +1,18 @@
 import java.awt.*;
+import java.util.Scanner;
+
 import javax.swing.JPanel;
 
 public class Panel extends JPanel {
 	private Color bg;
 	private int whichvid;
+	private int frame;
 
 	public Panel(Color c, int watvid) {
 		bg = c;
 		this.setBackground(bg);
 		whichvid = watvid;
+		frame = 0;
 	}
 
 
@@ -20,6 +24,10 @@ public class Panel extends JPanel {
 		drawdesc(g);
 		drawvideobox(g);
 		drawcomments(g);
+		if(whichvid == 1) {
+			video1(g, frame);
+			frame++;
+		}
 	}
 
 
@@ -78,10 +86,40 @@ public class Panel extends JPanel {
 		g.drawString("Comments:", 721, 50); 
 
 		//use a doc to store all of the comments
-		
+
+		String filecomments = "comments.txt";
+		//Scanner fileinput = new Scanner(new File(filecomments)); //creating the reader
+		//Cant create a scanner for some reason, that is my problem
+
+
+		/*
+        
+        PrintWriter fileoutput = new PrintWriter(new File(file2)); //and the writer
+
+        translator(fileinput, fileoutput); //translating the scentance (and pulling/pushing data from the files names given)
+
+        fileoutput.close(); //MANDATORY TO CLOSE TO SAVE
+        fileinput.close();
+        input.close(); 
+		 
+
+
+
+		|-----------------------------------------------------------------------------------------------------------------------------
+		 */
+
+
 	}
 
+	private void video1(Graphics g, int frame) {
+		frame = frame%10; //change depending on the amount of frames in the animation
+		
+		g.setColor(Color.lightGray);
+		g.setFont(new Font("Arial", Font.PLAIN, 20)); //URL
 
+		g.drawString(String.valueOf(frame), 300, 150); 
+
+	}
 
 
 	private void drawdesc(Graphics g) {
