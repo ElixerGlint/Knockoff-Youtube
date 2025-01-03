@@ -113,11 +113,29 @@ public class Panel extends JPanel {
 
 	private void video1(Graphics g, int frame) {
 		frame = frame%10; //change depending on the amount of frames in the animation
-		
+
 		g.setColor(Color.lightGray);
 		g.setFont(new Font("Arial", Font.PLAIN, 20)); //URL
 
+		
+
+
+		//--------------------------------------------------------------------------------Layer 0 ------------------------------------------------------------//
+		g.setColor(Color.red);
+		g.fillRect(10, 30, 700, 400); //video box
+		//--------------------------------------------------------------------------------Layer 1 ------------------------------------------------------------//
+		g.setColor(Color.lightGray);
 		g.drawString(String.valueOf(frame), 300, 150); 
+		//--------------------------------------------------------------------------------Layer 2 ------------------------------------------------------------//
+		g.setColor(Color.green);
+		g.fillRect(10, 30, 700, 50); //video box
+		g.fillRect(10, 380, 700, 50); //video box
+
+
+
+		g.setColor(Color.lightGray);
+		g.drawString(String.valueOf(frame), 300, 150); 
+		//snow will only be effected by the frame
 
 	}
 
