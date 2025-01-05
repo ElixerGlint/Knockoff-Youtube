@@ -1,6 +1,5 @@
 import java.awt.*;
 import java.util.Scanner;
-
 import javax.swing.JPanel;
 
 public class Panel extends JPanel {
