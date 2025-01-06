@@ -1,6 +1,5 @@
 import java.awt.*;
 import javax.swing.JPanel;
-import java.awt.geom.*;
 
 public class Panel extends JPanel {
 	private Color bg;
