@@ -19,7 +19,7 @@ public class snowflakes {
         System.out.println(y);
         y+= 1;
 
-        if(y>450) {
+        if(y>420) {
             y = 230;
             x = (int)(Math.random()*550) + 70;
         }
