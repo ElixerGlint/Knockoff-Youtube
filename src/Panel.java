@@ -1,5 +1,6 @@
 import java.awt.*;
 import javax.swing.JPanel;
+import java.awt.geom.*;
 
 public class Panel extends JPanel {
 	private Color bg;
@@ -15,7 +16,11 @@ public class Panel extends JPanel {
 
 
 
-	public void paintComponent(Graphics g) { //paints the browser box
+	public void paintComponent(Graphics g) { //paints everything
+		snowflakes tempflake1 = new snowflakes((int)(Math.random()*550) + 70,230);
+		snowflakes tempflake2 = new snowflakes((int)(Math.random()*550) + 70,230);
+		snowflakes[] snow = {tempflake1, tempflake2};
+
 		super.paintComponent(g);
 		this.setBackground(bg);
 		printoutline(g);
@@ -23,7 +28,7 @@ public class Panel extends JPanel {
 		drawvideobox(g);
 		drawcomments(g);
 		if(whichvid == 1) {
-			video1(g, frame);
+			video1(g, frame, snow);
 			frame++;
 		}
 	}
@@ -109,7 +114,7 @@ public class Panel extends JPanel {
 
 	}
 
-	private void video1(Graphics g, int frame) {
+	private void video1(Graphics g, int frame, snowflakes[] snow) {
 		frame = frame%10; //change depending on the amount of frames in the animation
 
 		g.setColor(Color.lightGray);
@@ -189,29 +194,20 @@ public class Panel extends JPanel {
 		g.setFont(new Font("Arial", Font.PLAIN, 80)); //URL
 		g.drawString("Merry Christmas!", 50, 230); 
 
-		//--------------------------------------------------------------------------------Layer 5 ------------------------------------------------------------//
+		//--------------------------------------------------------------------------------Layer 5 -----(snowflakes)------------------------------------------//
+		g.setColor(Color.WHITE);
 
 
-		//--------------------------------------------------------------------------------Layer 6 ------------------------------------------------------------//
 
 
-		//--------------------------------------------------------------------------------Layer 7 ------------------------------------------------------------//
+		for(int i = 0; i < 2; i++) {
+			g.fillOval(snow[i].getX(), snow[i].getY(), 10, 10);
 
 
-		//--------------------------------------------------------------------------------Layer 8 ------------------------------------------------------------//
+			snow[i].move();
+		}
 
-
-		//--------------------------------------------------------------------------------Layer 9 ------------------------------------------------------------//
-
-
-		//--------------------------------------------------------------------------------Layer 10 ------------------------------------------------------------//
-
-
-		//--------------------------------------------------------------------------------Layer 11 ------------------------------------------------------------//
-
-
-		//--------------------------------------------------------------------------------Layer 12 ------------------------------------------------------------//
-
+		
 
 		//--------------------------------------------------------------------------------Layer 13 ------------------------------------------------------------//
 

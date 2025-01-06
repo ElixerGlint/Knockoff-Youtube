@@ -42,8 +42,6 @@ public class Driver {
 		frame.setVisible(true);
 
 		while(true) {
-			
-			
 			frame.repaint();
 		}
 	}
