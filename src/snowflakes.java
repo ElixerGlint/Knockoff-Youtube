@@ -17,7 +17,7 @@ public class snowflakes {
 
         System.out.println(x);
         System.out.println(y);
-        y-= 100;
+        y+= 1;
     }
 
     public int getX() {

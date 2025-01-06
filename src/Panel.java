@@ -6,6 +6,9 @@ public class Panel extends JPanel {
 	private Color bg;
 	private int whichvid;
 	private int frame;
+	snowflakes tempflake1 = new snowflakes((int)(Math.random()*550) + 70,230);
+	snowflakes tempflake2 = new snowflakes((int)(Math.random()*550) + 70,230);
+	snowflakes[] snow = {tempflake1, tempflake2};
 
 	public Panel(Color c, int watvid) {
 		bg = c;
@@ -17,10 +20,6 @@ public class Panel extends JPanel {
 
 
 	public void paintComponent(Graphics g) { //paints everything
-		snowflakes tempflake1 = new snowflakes((int)(Math.random()*550) + 70,230);
-		snowflakes tempflake2 = new snowflakes((int)(Math.random()*550) + 70,230);
-		snowflakes[] snow = {tempflake1, tempflake2};
-
 		super.paintComponent(g);
 		this.setBackground(bg);
 		printoutline(g);
