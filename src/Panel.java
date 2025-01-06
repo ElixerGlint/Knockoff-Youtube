@@ -5,14 +5,14 @@ public class Panel extends JPanel {
 	private Color bg;
 	private int whichvid;
 	private int frame;
-	snowflakes tempflake1 = new snowflakes((int)(Math.random()*550) + 70,230);
-	snowflakes tempflake2 = new snowflakes((int)(Math.random()*550) + 70,250);
-	snowflakes tempflake3 = new snowflakes((int)(Math.random()*550) + 70,270);
-	snowflakes tempflake4 = new snowflakes((int)(Math.random()*550) + 70,290);
-	snowflakes tempflake5 = new snowflakes((int)(Math.random()*550) + 70,310);
-	snowflakes tempflake6 = new snowflakes((int)(Math.random()*550) + 70,330);
-	snowflakes tempflake7 = new snowflakes((int)(Math.random()*550) + 70,350);
-	snowflakes tempflake8 = new snowflakes((int)(Math.random()*550) + 70,370);
+	snowflakes tempflake1 = new snowflakes((int)(Math.random()*550) + 70, 230);
+	snowflakes tempflake2 = new snowflakes((int)(Math.random()*550) + 70, 250);
+	snowflakes tempflake3 = new snowflakes((int)(Math.random()*550) + 70, 270);
+	snowflakes tempflake4 = new snowflakes((int)(Math.random()*550) + 70, 290);
+	snowflakes tempflake5 = new snowflakes((int)(Math.random()*550) + 70, 310);
+	snowflakes tempflake6 = new snowflakes((int)(Math.random()*550) + 70, 330);
+	snowflakes tempflake7 = new snowflakes((int)(Math.random()*550) + 70, 350);
+	snowflakes tempflake8 = new snowflakes((int)(Math.random()*550) + 70, 370);
 	snowflakes[] snow = {tempflake1, tempflake2,tempflake3,tempflake4,tempflake5,tempflake6,tempflake7,tempflake8};
 
 	public Panel(Color c, int watvid) {
