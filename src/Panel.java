@@ -117,30 +117,77 @@ public class Panel extends JPanel {
 
 		Color darkgreen = new Color(0, 100, 0);
 
-
 		//--------------------------------------------------------------------------------Layer 0 ------------------------------------------------------------//
 		g.setColor(Color.red);
 		g.fillRect(10, 30, 700, 400); //video box
 		//--------------------------------------------------------------------------------Layer 1 ------------------------------------------------------------//
 		g.setColor(Color.lightGray);
-		g.drawString(String.valueOf(frame), 300, 150); 
 		//--------------------------------------------------------------------------------Layer 2 ------------------------------------------------------------//
 		g.setColor(darkgreen);
 		g.fillRect(10, 30, 700, 50); //video box
 		g.fillRect(10, 380, 700, 50); //video box
-		//--------------------------------------------------------------------------------Layer 3 ------------------------------------------------------------//
+		//--------------------------------------------------------------------Layer 3 (TOP GREEN) -------------------------------------------------------------//
 
 		int[] xPoints = {10, 100, 100}; //far left
         int[] yPoints = {80, 80, 150};
 		g.fillPolygon(xPoints,yPoints,3);
 
-		//xPoints = {10, 100, 100};
-        //yPoints = {80, 80, 150};
-		//g.fillPolygon(xPoints,yPoints,3);
+		int[] xPoints2 = {10, 200, 200};
+        int[] yPoints2 = {80, 80, 130};
+		g.fillPolygon(xPoints2,yPoints2,3);
 
+		int[] xPoints3 = {160, 160, 300};
+        int[] yPoints3 = {120, 80, 80};
+		g.fillPolygon(xPoints3,yPoints3,3);
+
+		int[] xPoints4 = {290, 390, 390}; //far left
+        int[] yPoints4 = {80, 80, 150};
+		g.fillPolygon(xPoints4,yPoints4,3);
+
+		for(int i = 0; i < xPoints.length; i++) {
+			xPoints[i] += 370;
+			xPoints2[i] += 370;
+			xPoints3[i] += 370;
+		}
+
+
+		//---------------------------------------------------------------------BOTTOM-------------------------------------------------------------------
+		g.fillPolygon(xPoints,yPoints,3);
+		g.fillPolygon(xPoints2,yPoints2,3);
+		g.fillPolygon(xPoints3,yPoints3,3);
+
+		int[] xPoints5 = {10, 100, 100}; //far left
+        int[] yPoints5 = {80 + 300, 80 + 300, 150 + (-140) + 300};
+		g.fillPolygon(xPoints5,yPoints5,3);
+
+		int[] xPoints6 = {10, 200, 200};
+        int[] yPoints6 = {80 + 300, 80 + 300, 130 + (- 100) + 300};
+		g.fillPolygon(xPoints6,yPoints6,3);
+
+		int[] xPoints7 = {160, 160, 300};
+        int[] yPoints7 = {120 + 300 + (-80), 80 + 300, 80 + 300};
+		g.fillPolygon(xPoints7,yPoints7,3);
+
+		int[] xPoints8 = {290, 390, 390}; //far left
+        int[] yPoints8 = {80+ 300, 80+ 300, 150+ (-140) + 300};
+		g.fillPolygon(xPoints8,yPoints8,3);
+
+
+		for(int i = 0; i < xPoints.length; i++) {
+			xPoints5[i] += 370;
+			xPoints6[i] += 370;
+			xPoints7[i] += 370;
+		}
+
+		g.fillPolygon(xPoints5,yPoints5,3);
+		g.fillPolygon(xPoints6,yPoints6,3);
+		g.fillPolygon(xPoints7,yPoints7,3);
 
 		//--------------------------------------------------------------------------------Layer 4 ------------------------------------------------------------//
 
+		g.setColor(Color.lightGray);
+		g.setFont(new Font("Arial", Font.PLAIN, 80)); //URL
+		g.drawString("Merry Christmas!", 50, 230); 
 
 		//--------------------------------------------------------------------------------Layer 5 ------------------------------------------------------------//
 
@@ -169,9 +216,9 @@ public class Panel extends JPanel {
 		//--------------------------------------------------------------------------------Layer 13 ------------------------------------------------------------//
 
 
-
-		g.setColor(Color.lightGray);
-		g.drawString(String.valueOf(frame), 300, 150); 
+		//frame system
+		//g.setColor(Color.lightGray);
+		//g.drawString(String.valueOf(frame), 300, 150); 
 		//snow will only be effected by the frame
 
 	}
