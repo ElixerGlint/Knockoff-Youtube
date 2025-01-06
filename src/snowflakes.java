@@ -18,6 +18,12 @@ public class snowflakes {
         System.out.println(x);
         System.out.println(y);
         y+= 1;
+
+        if(y>450) {
+            y = 230;
+            x = (int)(Math.random()*550) + 70;
+        }
+
     }
 
     public int getX() {
