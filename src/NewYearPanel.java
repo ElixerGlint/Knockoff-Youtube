@@ -135,11 +135,12 @@ public class NewYearPanel extends JPanel {
 
 		Color darkgreen = new Color(0, 100, 0);
 
+		/* TEMP
 		int string1y;
 		int string2y;
 		int string3y;
 		int string4y;
-
+		*/
 		
 		//--------------------------------------------------------------------------------Layer 0 ------------------------------------------------------------//
 		g.setColor(Color.red);
@@ -148,13 +149,14 @@ public class NewYearPanel extends JPanel {
 		g.setColor(Color.white);
 		g.drawLine(25, 50, 25, 250);
 		g.drawLine(60, 50, 60, 140);
+		g.drawLine(150, 50, 150, 140);
+		g.drawLine(240, 50, 240, 140);
 
 		g.setColor(Color.green);
 		g.fillOval(11, 240, 30, 30);
-
-		g.fillOval(50-14+10, 240, 30, 30);
-		
-
+		g.fillOval(46, 140, 30, 30);
+		g.fillOval(135, 120, 30, 30);
+		g.fillOval(225, 140, 30, 30);
 
 		//--------------------------------------------------------------------------------Layer 2 ------------------------------------------------------------//
 		g.setColor(darkgreen);
