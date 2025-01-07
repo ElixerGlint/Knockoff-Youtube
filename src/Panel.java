@@ -1,6 +1,8 @@
-import java.awt.*;
+import java.awt.*; //using collections
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 import javax.swing.JPanel;
 
@@ -32,7 +34,7 @@ public class Panel extends JPanel {
 			for(int i = 0; i < commentspossible.length; i++) {
 				commentspossible[i] = fileinput.nextLine();
 			}	
-			
+			Collections.shuffle(Arrays.asList(commentspossible)); //THIS WAS MY FIRST TIME USING COLLECTIONS TO RANDOMIZE AN ARRAY, I did research to find it
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
