@@ -232,6 +232,21 @@ public class Panel extends JPanel {
 		g.setColor(Color.BLACK); 
 
 		g.drawString("Description:", 11, 460 + 40);
+
+		if(whichvid == 1) {
+			g.drawString("Step into a tranquil winter wonderland as we capture the enchanting beauty of", 11, 500 + (20) * 1);
+			g.drawString("snowfall in this mesmerizing video. Watch as delicate flakes dance gently", 11, 500 + (20) * 2);
+			g.drawString("through the crisp air, blanketing everything in their path with a soft,", 11, 500 + (20) * 3);
+			g.drawString("glistening layer of white. Immerse yourself in the peaceful atmosphere of a", 11, 500 + (20) * 4);
+			g.drawString("snow-covered landscape, where nature's canvas transforms into a breathtaking", 11, 500 + (20) * 5);
+			g.drawString("work of art. The camera pans across rolling hills, bare trees, and frozen", 11, 500 + (20) * 6);
+			g.drawString("lakes, showcasing the serene majesty of winter's splendor.", 11, 500 + (20) * 7);
+			g.drawString("Our HD footage captures the intricate details of individual snowflakes,", 11, 500 + (20) * 8);
+			g.drawString("each uniquely shaped and fleeting. Observe how they cling to branches,", 11, 500 + (20) * 9);
+			g.drawString("weighing down limbs and creating a picturesque scene of winter's grip", 11, 500 + (20) * 10);
+			g.drawString("on nature.", 11, 500 + (20) * 11);
+			g.drawString("", 11, 500 + (20) * 12);
+		}
 	}
 
 	private void drawvideobox(Graphics g) {
