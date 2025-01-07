@@ -1,18 +1,15 @@
 import java.awt.*;
-import javax.swing.JPanel;
-import javax.swing.JSlider;
-import javax.swing.event.ChangeListener;
-
-import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Scanner;
+import javax.swing.JPanel;
 
 public class Panel extends JPanel {
 	private Color bg;
 	private int whichvid;
 	private int frame;
 	private int commentsslidervalue;
-	String[] commentspossible = new String[4];
+	String[] commentspossible = new String[20];
 	snowflakes tempflake1 = new snowflakes((int)(Math.random()*550) + 70, 230);
 	snowflakes tempflake2 = new snowflakes((int)(Math.random()*550) + 70, 250);
 	snowflakes tempflake3 = new snowflakes((int)(Math.random()*550) + 70, 270);
@@ -115,14 +112,12 @@ public class Panel extends JPanel {
 
 		//commentsslidervalue
 
-		for(int i = commentsslidervalue; i < commentsslidervalue + 20; i++) {
-			//
+		for(int i = commentsslidervalue; i < commentsslidervalue + 8; i++) {
+			g.drawString(commentspossible[i], 721, 70+i*20); 
 
 
 			
 		}
-
-		System.out.println(commentsslidervalue);
 
 
 
