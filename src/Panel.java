@@ -31,8 +31,8 @@ public class Panel extends JPanel {
 
 			for(int i = 0; i < commentspossible.length; i++) {
 				commentspossible[i] = fileinput.nextLine();
-			}
-
+			}	
+			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -105,18 +105,17 @@ public class Panel extends JPanel {
 		g.setColor(Color.lightGray);
 		g.fillRect(720, 30, 260, 720); //comments square
 
-		g.setFont(new Font("Arial", Font.PLAIN, 20)); //URL
+		g.setFont(new Font("Arial", Font.PLAIN, 20)); 
 		g.setColor(Color.BLACK); 
 
 		g.drawString("Comments:", 721, 50); 
 
 		//commentsslidervalue
-
+		g.setFont(new Font("Arial", Font.PLAIN, 25)); 
+		int counter = 0;
 		for(int i = commentsslidervalue; i < commentsslidervalue + 8; i++) {
-			g.drawString(commentspossible[i], 721, 70+i*20); 
-
-
-			
+			g.drawString(commentspossible[i], 721, 85 + counter*85); //base value used to be 70
+			counter++;
 		}
 
 
