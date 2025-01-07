@@ -26,7 +26,7 @@ public class Driver {
 		frame.add(Everything);
 		frame.setTitle("Mootube");
 
-		JSlider yslider = new JSlider(1,0,100,0);
+		JSlider yslider = new JSlider(1,0,20,0);
 		
 		yslider.setPaintTicks(true);
 		yslider.setPaintLabels(true);

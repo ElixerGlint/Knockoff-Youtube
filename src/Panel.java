@@ -115,14 +115,17 @@ public class Panel extends JPanel {
 
 		//commentsslidervalue
 
+		for(int i = commentsslidervalue; i < commentsslidervalue + 20; i++) {
+
+		}
+
+		System.out.println(commentsslidervalue);
 
 
 
 
 
 
-
-		
 	}
 
 	private void video1(Graphics g, int frame, snowflakes[] snow) {
