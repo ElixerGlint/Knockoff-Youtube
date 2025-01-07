@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.Scanner;
 import javax.swing.JPanel;
 
-public class Panel extends JPanel {
+public class NewYearPanel extends JPanel {
 	private Color bg;
 	private int whichvid;
 	private int frame;
@@ -22,7 +22,7 @@ public class Panel extends JPanel {
 	snowflakes tempflake8 = new snowflakes((int)(Math.random()*550) + 70, 370);
 	snowflakes[] snow = {tempflake1, tempflake2,tempflake3,tempflake4,tempflake5,tempflake6,tempflake7,tempflake8};
 
-	public Panel(Color c, int watvid) {
+	public NewYearPanel(Color c, int watvid) {
 		bg = c;
 		this.setBackground(bg);
 		whichvid = watvid;
@@ -135,11 +135,27 @@ public class Panel extends JPanel {
 
 		Color darkgreen = new Color(0, 100, 0);
 
+		int string1y;
+		int string2y;
+		int string3y;
+		int string4y;
+
+		
 		//--------------------------------------------------------------------------------Layer 0 ------------------------------------------------------------//
 		g.setColor(Color.red);
 		g.fillRect(10, 30, 700, 400); //video box
-		//--------------------------------------------------------------------------------Layer 1 ------------------------------------------------------------//
-		g.setColor(Color.lightGray);
+		//-----------------------------------------------------------------------------Layer BALLS ------------------------------------------------------------//
+		g.setColor(Color.white);
+		g.drawLine(25, 50, 25, 250);
+		g.drawLine(60, 50, 60, 140);
+
+		g.setColor(Color.green);
+		g.fillOval(11, 240, 30, 30);
+
+		g.fillOval(50-14+10, 240, 30, 30);
+		
+
+
 		//--------------------------------------------------------------------------------Layer 2 ------------------------------------------------------------//
 		g.setColor(darkgreen);
 		g.fillRect(10, 30, 700, 50); //video box

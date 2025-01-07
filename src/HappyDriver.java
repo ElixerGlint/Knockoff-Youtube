@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JSlider;
 
 
-public class Driver {
+public class HappyDriver {
 
 	public static void main(String[] args) throws InterruptedException {
 		JFrame frame = new JFrame();
@@ -19,7 +19,7 @@ public class Driver {
 		Integer vidselection = (Integer)(JOptionPane.showInputDialog(null, "What video do you want to watch?", "Video Selector",JOptionPane.QUESTION_MESSAGE,null,choices,choices[0])); //default choice is the last one || THIS IS FOR CREATING DROP DOWN MENUS
 		Color temp = JColorChooser.showDialog(null, "What color do you want the browser to be?", Color.white); //first thing
 
-		Panel Everything = new Panel(bgColor,vidselection);
+		NewYearPanel Everything = new NewYearPanel(bgColor,vidselection);
 
 		frame.add(Everything);
 		frame.setTitle("Mootube");
