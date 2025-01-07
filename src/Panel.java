@@ -116,7 +116,10 @@ public class Panel extends JPanel {
 		//commentsslidervalue
 
 		for(int i = commentsslidervalue; i < commentsslidervalue + 20; i++) {
+			//
 
+
+			
 		}
 
 		System.out.println(commentsslidervalue);
