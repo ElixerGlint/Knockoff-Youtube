@@ -57,12 +57,12 @@ public class NewYearPanel extends JPanel {
 			video1(g, frame, snow);
 			frame++;
 		}
+		if(whichvid == 2) {
+			video2(g, frame);
+			frame++;
+		}
 	}
 
-
-
-
-	
 	private void printoutline(Graphics g) {
 		g.setColor(Color.darkGray);
 		g.drawRect(0, 0, 985, 20); //bottom line
@@ -105,7 +105,6 @@ public class NewYearPanel extends JPanel {
 		
 	}
 
-
 	private void drawcomments(Graphics g) {
 		g.setColor(Color.lightGray);
 		g.fillRect(720, 30, 260, 720); //comments square
@@ -122,12 +121,6 @@ public class NewYearPanel extends JPanel {
 			g.drawString(commentspossible[i], 721, 85 + counter*85); //base value used to be 70
 			counter++;
 		}
-
-
-
-
-
-
 	}
 
 	private void video1(Graphics g, int frame, snowflakes[] snow) {
@@ -138,7 +131,7 @@ public class NewYearPanel extends JPanel {
 
 		Color darkgreen = new Color(0, 100, 0);
 
-		/* TEMP
+		/* FOR BOBBING (if i want to add it)
 		int string1y;
 		int string2y;
 		int string3y;
@@ -254,18 +247,17 @@ public class NewYearPanel extends JPanel {
 
 			snow[i].move();
 		}
-
-		
-
-		//--------------------------------------------------------------------------------Layer 7 ------------------------------------------------------------//
-
-
-		//frame system
-		//g.setColor(Color.lightGray);
-		//g.drawString(String.valueOf(frame), 300, 150); 
-		//snow will only be effected by the frame
-		
 	}
+
+	private void video2(Graphics g, int frame) { //--------------------------------------VIDEO 2-----------------------------------------------------------
+		//--------------------------------------------------------------------------------Layer 0 ------------------------------------------------------------//
+		g.setColor(Color.pink);
+		g.fillRect(10, 30, 700, 400); //video box
+
+
+
+	}
+
 
 
 	private void drawdesc(Graphics g) {
@@ -293,10 +285,6 @@ public class NewYearPanel extends JPanel {
 		}
 	}
 
-	private void drawornament() {
-
-	}
-
 	private void drawvideobox(Graphics g) {
 		g.setColor(Color.black);
 		g.fillRect(10, 30, 700, 400); //video box
@@ -309,13 +297,10 @@ public class NewYearPanel extends JPanel {
 	public void setBg(Color bg) {
 		this.bg = bg;
 	}
-
 	public int getCommentsslidervalue() {
 		return commentsslidervalue;
 	}
-
 	public void setCommentsslidervalue(int commentsslidervalue) {
 		this.commentsslidervalue = commentsslidervalue;
 	}
-	
 }
