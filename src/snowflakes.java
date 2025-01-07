@@ -20,7 +20,10 @@ public class snowflakes {
             y = 230;
             x = (int)(Math.random()*550) + 70;
         }
-
+        if(x>710 || x < 10) {
+            y = 230;
+            x = (int)(Math.random()*550) + 70;
+        }
     }
 
     public int getX() {
