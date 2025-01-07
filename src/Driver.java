@@ -26,7 +26,6 @@ public class Driver {
 		frame.add(Everything);
 		frame.setTitle("Mootube");
 
-		
 		JSlider yslider = new JSlider(1,0,100,0);
 		
 		yslider.setPaintTicks(true);
@@ -36,14 +35,18 @@ public class Driver {
 		frame.add(yslider,BorderLayout.EAST);
 		
 
-		
+
 		
 		Everything.setBg(temp);
 		frame.setVisible(true);
 
+		
+
 		while(true) {
+			Everything.setCommentsslidervalue(yslider.getValue());
 			frame.repaint();
 			Thread.sleep(4);
+			
 		}
 	}
 

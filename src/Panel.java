@@ -1,5 +1,6 @@
 import java.awt.*;
 import javax.swing.JPanel;
+import javax.swing.JSlider;
 import javax.swing.event.ChangeListener;
 
 import java.util.Scanner;
@@ -10,6 +11,7 @@ public class Panel extends JPanel {
 	private Color bg;
 	private int whichvid;
 	private int frame;
+	private int commentsslidervalue;
 	String[] commentspossible = new String[4];
 	snowflakes tempflake1 = new snowflakes((int)(Math.random()*550) + 70, 230);
 	snowflakes tempflake2 = new snowflakes((int)(Math.random()*550) + 70, 250);
@@ -37,6 +39,7 @@ public class Panel extends JPanel {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+		commentsslidervalue = 0;
 	}
 
 
@@ -100,6 +103,7 @@ public class Panel extends JPanel {
 		
 	}
 
+
 	private void drawcomments(Graphics g) {
 		g.setColor(Color.lightGray);
 		g.fillRect(720, 30, 260, 720); //comments square
@@ -109,14 +113,17 @@ public class Panel extends JPanel {
 
 		g.drawString("Comments:", 721, 50); 
 
+		//commentsslidervalue
+
+
+
+
+
+
+
+
 		
-
-
 	}
-
-	/*public class Sliderdemo implements ChangeListener() {
-
-	}*/
 
 	private void video1(Graphics g, int frame, snowflakes[] snow) {
 		frame = frame%10; //change depending on the amount of frames in the animation
@@ -224,7 +231,7 @@ public class Panel extends JPanel {
 		//g.setColor(Color.lightGray);
 		//g.drawString(String.valueOf(frame), 300, 150); 
 		//snow will only be effected by the frame
-
+		
 	}
 
 
@@ -269,4 +276,13 @@ public class Panel extends JPanel {
 	public void setBg(Color bg) {
 		this.bg = bg;
 	}
+
+	public int getCommentsslidervalue() {
+		return commentsslidervalue;
+	}
+
+	public void setCommentsslidervalue(int commentsslidervalue) {
+		this.commentsslidervalue = commentsslidervalue;
+	}
+	
 }
