@@ -43,6 +43,7 @@ public class Driver {
 
 		while(true) {
 			frame.repaint();
+			Thread.sleep(4);
 		}
 	}
 
