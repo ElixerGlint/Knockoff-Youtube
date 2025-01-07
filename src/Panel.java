@@ -1,10 +1,16 @@
 import java.awt.*;
 import javax.swing.JPanel;
+import javax.swing.event.ChangeListener;
+
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 public class Panel extends JPanel {
 	private Color bg;
 	private int whichvid;
 	private int frame;
+	String[] commentspossible = new String[4];
 	snowflakes tempflake1 = new snowflakes((int)(Math.random()*550) + 70, 230);
 	snowflakes tempflake2 = new snowflakes((int)(Math.random()*550) + 70, 250);
 	snowflakes tempflake3 = new snowflakes((int)(Math.random()*550) + 70, 270);
@@ -20,6 +26,17 @@ public class Panel extends JPanel {
 		this.setBackground(bg);
 		whichvid = watvid;
 		frame = 0;
+		File abc = new File("comments.txt");
+		try {
+			Scanner fileinput = new Scanner(abc);
+
+			for(int i = 0; i < commentspossible.length; i++) {
+				commentspossible[i] = fileinput.nextLine();
+			}
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 
 
@@ -66,7 +83,7 @@ public class Panel extends JPanel {
 
 		if(whichvid == 1) {
 			g.drawString("https://www.mootube.com/watch?v=zqOGDO-kSpE", 1, 17); 
-			g.drawString("Merry Christmas! - Santa Clause", 11, 462); 
+			g.drawString("Merry Christmas!", 11, 462); 
 		}
 		
 
@@ -92,31 +109,14 @@ public class Panel extends JPanel {
 
 		g.drawString("Comments:", 721, 50); 
 
-		//use a doc to store all of the comments
-
-		String filecomments = "comments.txt";
-		//Scanner fileinput = new Scanner(new File(filecomments)); //creating the reader
-		//Cant create a scanner for some reason, that is my problem
-
-
-		/*
-        
-        PrintWriter fileoutput = new PrintWriter(new File(file2)); //and the writer
-
-        translator(fileinput, fileoutput); //translating the scentance (and pulling/pushing data from the files names given)
-
-        fileoutput.close(); //MANDATORY TO CLOSE TO SAVE
-        fileinput.close();
-        input.close(); 
-		 
-
-
-
-		|-----------------------------------------------------------------------------------------------------------------------------
-		 */
+		
 
 
 	}
+
+	/*public class Sliderdemo implements ChangeListener() {
+
+	}*/
 
 	private void video1(Graphics g, int frame, snowflakes[] snow) {
 		frame = frame%10; //change depending on the amount of frames in the animation
@@ -194,11 +194,15 @@ public class Panel extends JPanel {
 
 		//--------------------------------------------------------------------------------Layer 4 ------------------------------------------------------------//
 
-		g.setColor(Color.lightGray);
+		g.setColor(Color.white);
 		g.setFont(new Font("Arial", Font.PLAIN, 80)); //URL
 		g.drawString("Merry Christmas!", 50, 230); 
 
-		//--------------------------------------------------------------------------------Layer 5 -----(snowflakes)------------------------------------------//
+		//--------------------------------------------------------------------------------Layer 5 -----(Candy canes)------------------------------------------//
+
+
+
+		//--------------------------------------------------------------------------------Layer 6 -----(snowflakes)------------------------------------------//
 		g.setColor(Color.WHITE);
 
 
@@ -213,7 +217,7 @@ public class Panel extends JPanel {
 
 		
 
-		//--------------------------------------------------------------------------------Layer 13 ------------------------------------------------------------//
+		//--------------------------------------------------------------------------------Layer 7 ------------------------------------------------------------//
 
 
 		//frame system
@@ -245,8 +249,12 @@ public class Panel extends JPanel {
 			g.drawString("each uniquely shaped and fleeting. Observe how they cling to branches,", 11, 500 + (20) * 9);
 			g.drawString("weighing down limbs and creating a picturesque scene of winter's grip", 11, 500 + (20) * 10);
 			g.drawString("on nature.", 11, 500 + (20) * 11);
-			g.drawString("", 11, 500 + (20) * 12);
+			g.drawString("-- Santa Clause", 11, 500 + (20) * 12);
 		}
+	}
+
+	private void drawornament() {
+
 	}
 
 	private void drawvideobox(Graphics g) {

@@ -14,9 +14,6 @@ public class snowflakes {
         else {
             x -= (int)(Math.random()*10);
         }
-
-        System.out.println(x);
-        System.out.println(y);
         y+= 1;
 
         if(y>420) {
