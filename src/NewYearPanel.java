@@ -151,12 +151,14 @@ public class NewYearPanel extends JPanel {
 		g.drawLine(60, 50, 60, 140);
 		g.drawLine(150, 50, 150, 140);
 		g.drawLine(240, 50, 240, 140);
+		g.drawLine(310, 50, 310, 140);
 
 		g.setColor(Color.green);
 		g.fillOval(11, 240, 30, 30);
 		g.fillOval(46, 140, 30, 30);
 		g.fillOval(135, 120, 30, 30);
 		g.fillOval(225, 140, 30, 30);
+		g.fillOval(295, 110, 30, 30);
 
 		//--------------------------------------------------------------------------------Layer 2 ------------------------------------------------------------//
 		g.setColor(darkgreen);
