@@ -11,6 +11,7 @@ public class NewYearPanel extends JPanel {
 	private int whichvid;
 	private int frame;
 	private int commentsslidervalue;
+	private Color accentcolor;
 	String[] commentspossible = new String[20];
 	snowflakes tempflake1 = new snowflakes((int)(Math.random()*550) + 70, 230);
 	snowflakes tempflake2 = new snowflakes((int)(Math.random()*550) + 70, 250);
@@ -22,7 +23,7 @@ public class NewYearPanel extends JPanel {
 	snowflakes tempflake8 = new snowflakes((int)(Math.random()*550) + 70, 370);
 	snowflakes[] snow = {tempflake1, tempflake2,tempflake3,tempflake4,tempflake5,tempflake6,tempflake7,tempflake8};
 
-	public NewYearPanel(Color c, int watvid) {
+	public NewYearPanel(Color c, int watvid, Color secondcolor) {
 		bg = c;
 		this.setBackground(bg);
 		whichvid = watvid;
@@ -39,6 +40,8 @@ public class NewYearPanel extends JPanel {
 			e.printStackTrace();
 		}
 		commentsslidervalue = 0;
+
+		accentcolor = secondcolor;
 	}
 
 
@@ -152,13 +155,21 @@ public class NewYearPanel extends JPanel {
 		g.drawLine(150, 50, 150, 140);
 		g.drawLine(240, 50, 240, 140);
 		g.drawLine(310, 50, 310, 140);
+		g.drawLine(420, 50, 420, 140);
+		g.drawLine(520, 50, 520, 160);
+		g.drawLine(620, 50, 620, 130);
+		g.drawLine(690, 50, 690, 250);
 
-		g.setColor(Color.green);
+		g.setColor(accentcolor);
 		g.fillOval(11, 240, 30, 30);
 		g.fillOval(46, 140, 30, 30);
 		g.fillOval(135, 120, 30, 30);
 		g.fillOval(225, 140, 30, 30);
 		g.fillOval(295, 110, 30, 30);
+		g.fillOval(405, 130, 30, 30);
+		g.fillOval(505, 150, 30, 30);
+		g.fillOval(605, 120, 30, 30);
+		g.fillOval(675, 240, 30, 30);
 
 		//--------------------------------------------------------------------------------Layer 2 ------------------------------------------------------------//
 		g.setColor(darkgreen);
