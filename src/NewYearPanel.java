@@ -1,5 +1,5 @@
-import java.awt.*; //using collections
-import java.io.File;
+import java.awt.*;
+import java.io.File; //using collections
 import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.Collections;
@@ -13,15 +13,25 @@ public class NewYearPanel extends JPanel {
 	private int commentsslidervalue;
 	private Color accentcolor;
 	String[] commentspossible = new String[20];
-	snowflakes tempflake1 = new snowflakes((int)(Math.random()*550) + 70, 230);
-	snowflakes tempflake2 = new snowflakes((int)(Math.random()*550) + 70, 250);
-	snowflakes tempflake3 = new snowflakes((int)(Math.random()*550) + 70, 270);
-	snowflakes tempflake4 = new snowflakes((int)(Math.random()*550) + 70, 290);
-	snowflakes tempflake5 = new snowflakes((int)(Math.random()*550) + 70, 310);
-	snowflakes tempflake6 = new snowflakes((int)(Math.random()*550) + 70, 330);
-	snowflakes tempflake7 = new snowflakes((int)(Math.random()*550) + 70, 350);
-	snowflakes tempflake8 = new snowflakes((int)(Math.random()*550) + 70, 370);
-	snowflakes[] snow = {tempflake1, tempflake2,tempflake3,tempflake4,tempflake5,tempflake6,tempflake7,tempflake8};
+	movement tempflake1 = new movement((int)(Math.random()*550) + 70, 230);
+	movement tempflake2 = new movement((int)(Math.random()*550) + 70, 250);
+	movement tempflake3 = new movement((int)(Math.random()*550) + 70, 270);
+	movement tempflake4 = new movement((int)(Math.random()*550) + 70, 290);
+	movement tempflake5 = new movement((int)(Math.random()*550) + 70, 310);
+	movement tempflake6 = new movement((int)(Math.random()*550) + 70, 330);
+	movement tempflake7 = new movement((int)(Math.random()*550) + 70, 350);
+	movement tempflake8 = new movement((int)(Math.random()*550) + 70, 370);
+	movement[] snow = {tempflake1, tempflake2,tempflake3,tempflake4,tempflake5,tempflake6,tempflake7,tempflake8};
+
+	movement tempconfetti = new movement((int)(Math.random()*550) + 70, 230);
+	movement tempconfetti2 = new movement((int)(Math.random()*550) + 70, 250);
+	movement tempconfetti3 = new movement((int)(Math.random()*550) + 70, 270);
+	movement tempconfetti4 = new movement((int)(Math.random()*550) + 70, 290);
+	movement tempconfetti5 = new movement((int)(Math.random()*550) + 70, 310);
+	movement tempconfetti6 = new movement((int)(Math.random()*550) + 70, 330);
+	movement tempconfetti7 = new movement((int)(Math.random()*550) + 70, 350);
+	movement tempconfetti8 = new movement((int)(Math.random()*550) + 70, 370);
+	movement[] confetti = {tempconfetti, tempconfetti2,tempconfetti3,tempconfetti4,tempconfetti5,tempconfetti6,tempconfetti7,tempconfetti8};
 
 	public NewYearPanel(Color c, int watvid, Color secondcolor) {
 		bg = c;
@@ -58,7 +68,7 @@ public class NewYearPanel extends JPanel {
 			frame++;
 		}
 		if(whichvid == 2) {
-			video2(g, frame);
+			video2(g, frame, confetti);
 			frame++;
 		}
 	}
@@ -123,8 +133,8 @@ public class NewYearPanel extends JPanel {
 		}
 	}
 
-	private void video1(Graphics g, int frame, snowflakes[] snow) {
-		frame = frame%10; //change depending on the amount of frames in the animation
+	private void video1(Graphics g, int frame, movement[] snow) {
+		//frame = frame%10; //change depending on the amount of frames in the animation
 
 		g.setColor(Color.lightGray);
 		g.setFont(new Font("Arial", Font.PLAIN, 20)); //URL
@@ -244,15 +254,56 @@ public class NewYearPanel extends JPanel {
 		for(int i = 0; i < snow.length; i++) {
 			g.fillOval(snow[i].getX(), snow[i].getY(), 10, 10);
 
-
 			snow[i].move();
 		}
 	}
 
-	private void video2(Graphics g, int frame) { //--------------------------------------VIDEO 2-----------------------------------------------------------
-		//--------------------------------------------------------------------------------Layer 0 ------------------------------------------------------------//
-		g.setColor(Color.pink);
+	private void video2(Graphics g, int frame, movement[] confetti) { //--------------------------------------VIDEO 2-----------------------------------------------------------
 		g.fillRect(10, 30, 700, 400); //video box
+
+		//--------------------------------------------------------------------------BG-----------------------------------------------------------
+		for(int i = 0; i < 255; i++) {
+			Color abc =  new Color (i,255,0);
+			g.setColor(abc);
+			g.drawLine(10+i, 30, 10+i, 430);
+		}
+
+		for(int i = 0; i < 255; i++) {
+			Color abc =  new Color (255,255-i,0);
+			g.setColor(abc);
+			g.drawLine(10+255+i, 30, 255+10+i, 430);
+		}
+		for(int i = 0; i < 190; i++) {
+			Color abc =  new Color (255,0,i);
+			g.setColor(abc);
+			g.drawLine(10+255+255+i, 30,255+ 255+10+i, 430);
+		}
+
+		//--------------------------------------------------------------------------TEXT-----------------------------------------------------------
+
+
+		g.setColor(accentcolor);
+
+		for(int i = 0 ; i < confetti.length; i++) {
+			g.fillRect(confetti[i].getX(), confetti[i].getY(), 60, 20);
+
+
+			confetti[i].move();
+		}
+
+		
+		g.setColor(Color.black);
+		g.setFont(new Font("Arial", Font.PLAIN, 70)); //URL
+		g.drawString("HAPPY NEW YEAR!", 29, 250);
+		g.setColor(Color.white);
+		g.drawString("HAPPY NEW YEAR!", 32, 253);
+
+		for(int i = 0; i < confetti.length; i++) {
+			if(confetti[i].getX() < 20) {
+				
+			}
+
+		}
 
 
 

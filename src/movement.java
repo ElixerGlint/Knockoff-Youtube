@@ -1,8 +1,8 @@
-public class snowflakes {
+public class movement {
     private int x;
     private int y;
 
-    public snowflakes(int x, int y) {
+    public movement(int x, int y) {
         this.x = x;
         this.y = y;
     }
