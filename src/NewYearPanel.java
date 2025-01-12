@@ -6,6 +6,10 @@ import java.util.Collections;
 import java.util.Scanner;
 import javax.swing.JPanel;
 
+/**
+    * This is the new years panel, it has everything inside of it
+    * @author Everett
+    */
 public class NewYearPanel extends JPanel {
 	private Color bg;
 	private int whichvid;
@@ -33,6 +37,11 @@ public class NewYearPanel extends JPanel {
 	movement tempconfetti8 = new movement((int)(Math.random()*550) + 70, 370);
 	movement[] confetti = {tempconfetti, tempconfetti2,tempconfetti3,tempconfetti4,tempconfetti5,tempconfetti6,tempconfetti7,tempconfetti8};
 
+	/**
+    * This is the consructor of the NewYearPanel class
+	* @return The NewYearPanel class constructed
+    * @author Everett
+    */
 	public NewYearPanel(Color c, int watvid, Color secondcolor) {
 		bg = c;
 		this.setBackground(bg);
@@ -54,8 +63,37 @@ public class NewYearPanel extends JPanel {
 		accentcolor = secondcolor;
 	}
 
+	/**
+    * This is the default consructor of the NewYearPanel class
+	* @return The NewYearPanel class constructed
+    * @author Everett
+    */
+	public NewYearPanel() {
+		bg = new Color(100,100,0);
+		this.setBackground(bg);
+		whichvid = 1;
+		frame = 0;
+		File abc = new File("comments.txt");
+		try {
+			Scanner fileinput = new Scanner(abc);
 
+			for(int i = 0; i < commentspossible.length; i++) {
+				commentspossible[i] = fileinput.nextLine();
+			}	
+			Collections.shuffle(Arrays.asList(commentspossible)); //THIS WAS MY FIRST TIME USING COLLECTIONS TO RANDOMIZE AN ARRAY, I did research to find it
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		commentsslidervalue = 0;
 
+		accentcolor = Color.black;
+	}
+
+	/**
+    * This is the command that is called to paint everything
+	* @param g the graphics class
+    * @author Everett
+    */
 	public void paintComponent(Graphics g) { //paints everything
 		super.paintComponent(g);
 		this.setBackground(bg);
@@ -64,11 +102,11 @@ public class NewYearPanel extends JPanel {
 		drawvideobox(g);
 		drawcomments(g);
 		if(whichvid == 1) {
-			video1(g, frame, snow);
+			video1(g, snow);
 			frame++;
 		}
 		if(whichvid == 2) {
-			video2(g, frame, confetti);
+			video2(g, confetti);
 			frame++;
 		}
 		if(whichvid == 3) {
@@ -77,6 +115,10 @@ public class NewYearPanel extends JPanel {
 		}
 	}
 
+	/**
+    * Prints the outline/ the web browser box
+    * @author Everett
+    */
 	private void printoutline(Graphics g) {
 		g.setColor(Color.darkGray);
 		g.drawRect(0, 0, 985, 20); //bottom line
@@ -119,6 +161,11 @@ public class NewYearPanel extends JPanel {
 		
 	}
 
+	/**
+    * This is the command that is called to draw all of the comments (and update based on the slider position)
+	* @param g the graphics class
+    * @author Everett
+    */
 	private void drawcomments(Graphics g) {
 		g.setColor(Color.lightGray);
 		g.fillRect(720, 30, 260, 720); //comments square
@@ -137,7 +184,13 @@ public class NewYearPanel extends JPanel {
 		}
 	}
 
-	private void video1(Graphics g, int frame, movement[] snow) {
+	/**
+    * This is the command that is called to draw the first video
+	* @param g the graphics class
+	* @param snow the array of snowflakes
+    * @author Everett
+    */
+	private void video1(Graphics g, movement[] snow) {
 
 		g.setColor(Color.lightGray);
 		g.setFont(new Font("Arial", Font.PLAIN, 20)); //URL
@@ -147,7 +200,7 @@ public class NewYearPanel extends JPanel {
 		//--------------------------------------------------------------------------------Layer 0 ------------------------------------------------------------//
 		g.setColor(Color.red);
 		g.fillRect(10, 30, 700, 400); //video box
-		//-----------------------------------------------------------------------------Layer BALLS ------------------------------------------------------------//
+		//-----------------------------------------------------------------------------Layer 1 BALLS -------------------------------------------------//
 		g.setColor(Color.white);
 		g.drawLine(25, 50, 25, 250);
 		g.drawLine(60, 50, 60, 140);
@@ -170,10 +223,10 @@ public class NewYearPanel extends JPanel {
 		g.fillOval(605, 120, 30, 30);
 		g.fillOval(675, 240, 30, 30);
 
-		//--------------------------------------------------------------------------------Layer 2 ------------------------------------------------------------//
+		//--------------------------------------------------------------------------------Layer 2 base bars (green) ------------------------------------------------//
 		g.setColor(darkgreen);
-		g.fillRect(10, 30, 700, 50); //video box
-		g.fillRect(10, 380, 700, 50); //video box
+		g.fillRect(10, 30, 700, 50); 
+		g.fillRect(10, 380, 700, 50); 
 		//--------------------------------------------------------------------Layer 3 (TOP GREEN) -------------------------------------------------------------//
 
 		int[] xPoints = {10, 100, 100}; //far left
@@ -199,7 +252,7 @@ public class NewYearPanel extends JPanel {
 		}
 
 
-		//---------------------------------------------------------------------BOTTOM-------------------------------------------------------------------
+		//---------------------------------------------------------------------layer 4 BOTTOM GREENS----------------------------------------------------------------
 		g.fillPolygon(xPoints,yPoints,3);
 		g.fillPolygon(xPoints2,yPoints2,3);
 		g.fillPolygon(xPoints3,yPoints3,3);
@@ -231,21 +284,15 @@ public class NewYearPanel extends JPanel {
 		g.fillPolygon(xPoints6,yPoints6,3);
 		g.fillPolygon(xPoints7,yPoints7,3);
 
-		//--------------------------------------------------------------------------------Layer 4 ------------------------------------------------------------//
+		//--------------------------------------------------------------------------------Layer 5 TEXT ------------------------------------------------------------//
 
 		g.setColor(Color.white);
 		g.setFont(new Font("Arial", Font.PLAIN, 80)); //URL
 		g.drawString("Merry Christmas!", 50, 230); 
 
-		//--------------------------------------------------------------------------------Layer 5 -----(Candy canes)------------------------------------------//
 
-
-
-		//--------------------------------------------------------------------------------Layer 6 -----(snowflakes)------------------------------------------//
+		//--------------------------------------------------------------------------------Layer 6 (snowflakes)------------------------------------------------//
 		g.setColor(Color.WHITE);
-
-
-
 
 		for(int i = 0; i < snow.length; i++) {
 			g.fillOval(snow[i].getX(), snow[i].getY(), 10, 10);
@@ -254,7 +301,13 @@ public class NewYearPanel extends JPanel {
 		}
 	}
 
-	private void video2(Graphics g, int frame, movement[] confetti) { //--------------------------------------VIDEO 2-----------------------------------------------------------
+	/**
+    * This is the command that is called to draw the second video
+	* @param g the graphics class
+	* @param confetti the array of confetti
+    * @author Everett
+    */
+	private void video2(Graphics g, movement[] confetti) { 
 		//--------------------------------------------------------------------------BG-----------------------------------------------------------
 		for(int i = 0; i < 255; i++) {
 			Color abc =  new Color (i,255,0);
@@ -273,7 +326,7 @@ public class NewYearPanel extends JPanel {
 			g.drawLine(10+255+255+i, 30,255+ 255+10+i, 430);
 		}
 
-		//--------------------------------------------------------------------------TEXT-----------------------------------------------------------
+		//--------------------------------------------------------------------------CONFETTI-----------------------------------------------------------
 
 
 		g.setColor(accentcolor);
@@ -285,7 +338,7 @@ public class NewYearPanel extends JPanel {
 			confetti[i].move();
 		}
 
-		
+		//--------------------------------------------------------------------------TEXT-----------------------------------------------------------
 		g.setColor(Color.black);
 		g.setFont(new Font("Arial", Font.PLAIN, 70)); //URL
 		g.drawString("HAPPY NEW YEAR!", 29, 250);
@@ -294,10 +347,15 @@ public class NewYearPanel extends JPanel {
 
 	}
 
-	private void video3(Graphics g, int frame) { //--------------------------------------VIDEO 2-----------------------------------------------------------
+	/**
+    * This is the command that is called to draw the third video
+	* @param g the graphics class
+	* @param frame the current frame of the animation
+    * @author Everett
+    */
+	private void video3(Graphics g, int frame) {
 		g.setColor(Color.black);
 		g.fillRect(10, 30, 700, 400); //video box
-		//DialogInput
 
 		g.setFont(new Font("Lucida Handwriting", Font.BOLD, 80));
 		g.setColor(accentcolor);
@@ -309,7 +367,7 @@ public class NewYearPanel extends JPanel {
 		g.drawString("-GHS", 380, 400); 
 
 		g.setColor(Color.white);
-		if(frame%10 < 5) {
+		if(frame%10 < 5) { //growing
 			drawsnowflake(g, 80, 80, frame % 10 + 5);
 			drawsnowflake(g, 280, 80, frame % 10 * 5);
 			drawsnowflake(g, 550, 130, frame % 10 * 20);
@@ -318,7 +376,7 @@ public class NewYearPanel extends JPanel {
 			drawsnowflake(g, 300, 340, frame % 10 * 3);
 			drawsnowflake(g, 80, 380, frame % 10 * 10);
 		}
-		else {
+		else { //shrinking
 			drawsnowflake(g, 80, 80, 30 - frame%10 * 5);
 			drawsnowflake(g, 280, 80, 45 - frame%10 * 5);
 			drawsnowflake(g, 550, 130, 200 - frame % 10 * 20);
@@ -329,13 +387,21 @@ public class NewYearPanel extends JPanel {
 		}
 		
 		
-		try {
+		try { //slight pause so the snowflakes dont grow and shrink instantly (it looks ugly)
 			Thread.sleep(20);
 		} catch (Exception e) {
 		}
 		
 	}
 
+	/**
+    * This is a helper function that draws snowflakes
+	* @param g the graphics class
+	* @param x the x value of the snowflake
+	* @param y the y value of the snowflake
+	* @param stretch the stretch factor of the snowflake
+    * @author Everett
+    */
 	private void drawsnowflake (Graphics g, int x, int y, int stretch) {
 		g.drawLine(x-stretch, y-stretch, x+stretch, y+stretch);
 		g.drawLine(x+stretch, y-stretch, x-stretch, y+stretch);
@@ -344,7 +410,11 @@ public class NewYearPanel extends JPanel {
 	}
 
 	
-
+	/**
+    * This function draws the description of the video
+	* @param g the graphics class
+    * @author Everett
+    */
 	private void drawdesc(Graphics g) {
 		g.setColor(Color.lightGray);
 		g.fillRect(10, 440 + 40, 700, 270); //fullscrene square
@@ -354,7 +424,7 @@ public class NewYearPanel extends JPanel {
 
 		g.drawString("Description:", 11, 460 + 40);
 
-		if(whichvid == 1) {
+		if(whichvid == 1) { //video 1 desc
 			g.drawString("Step into a tranquil winter wonderland as we capture the enchanting beauty of", 11, 500 + (20) * 1);
 			g.drawString("snowfall in this mesmerizing video. Watch as delicate flakes dance gently", 11, 500 + (20) * 2);
 			g.drawString("through the crisp air, blanketing everything in their path with a soft,", 11, 500 + (20) * 3);
@@ -369,7 +439,7 @@ public class NewYearPanel extends JPanel {
 			g.drawString("-- Santa Clause", 11, 500 + (20) * 12);
 		}
 
-		if(whichvid == 2) {
+		if(whichvid == 2) { //video 2 desc
 			g.drawString("Experience the magic of a vibrant rainbow confetti fall! This enchanting video", 11, 500 + (20) * 1);
 			g.drawString("captures the joy and excitement of a celebration as colorful confetti pieces", 11, 500 + (20) * 2);
 			g.drawString("gently float downwards against a stunning rainbow backdrop. The camera pans", 11, 500 + (20) * 3);
@@ -384,7 +454,7 @@ public class NewYearPanel extends JPanel {
 			g.drawString("-- The Happy New Year Man", 11, 500 + (20) * 12);
 		}
 
-		if (whichvid == 3)  {
+		if (whichvid == 3)  { //video 3 desc
 			g.drawString("A simple winter scene featuring snowflakes that grow and shrink. The", 11, 500 + (20) * 1);
 			g.drawString("video displays the phrase 'Happy Holidays' against a blank", 11, 500 + (20) * 2);
 			g.drawString("background. Snowflakes appear, enlarge, and then disappear. The", 11, 500 + (20) * 3);
@@ -400,6 +470,11 @@ public class NewYearPanel extends JPanel {
 		}
 	}
 
+	/**
+    * This function draws the video box of the video
+	* @param g the graphics class
+    * @author Everett
+    */
 	private void drawvideobox(Graphics g) {
 		g.setColor(Color.black);
 		g.fillRect(10, 30, 700, 400); //video box

@@ -1,14 +1,10 @@
 /**
     * This represents the moveable objects that go right and left across the screen
-    * @param x The initial x-coordinate
-    * @param y The initial y-coordinate
     * @author Everett
     */
 public class movement {
     private int x;
     private int y;
-
-
 
     /**
     * Constructs a new Movement object with initial x and y coordinates.
@@ -21,6 +17,10 @@ public class movement {
         this.y = y;
     }
 
+    /**
+    * This function moves the object down, left/right depending on a 50/50 and if it passes the area of the video box then it regenerates its position and moves it to the top
+    * @author Everett
+    */
     public void move() {
         if(Math.random() > 0.5) {
             x += (int)(Math.random()*10);
