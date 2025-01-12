@@ -71,6 +71,10 @@ public class NewYearPanel extends JPanel {
 			video2(g, frame, confetti);
 			frame++;
 		}
+		if(whichvid == 3) {
+			video2(g, frame);
+			frame++;
+		}
 	}
 
 	private void printoutline(Graphics g) {
@@ -134,19 +138,11 @@ public class NewYearPanel extends JPanel {
 	}
 
 	private void video1(Graphics g, int frame, movement[] snow) {
-		//frame = frame%10; //change depending on the amount of frames in the animation
 
 		g.setColor(Color.lightGray);
 		g.setFont(new Font("Arial", Font.PLAIN, 20)); //URL
 
 		Color darkgreen = new Color(0, 100, 0);
-
-		/* FOR BOBBING (if i want to add it)
-		int string1y;
-		int string2y;
-		int string3y;
-		int string4y;
-		*/
 		
 		//--------------------------------------------------------------------------------Layer 0 ------------------------------------------------------------//
 		g.setColor(Color.red);
@@ -259,8 +255,6 @@ public class NewYearPanel extends JPanel {
 	}
 
 	private void video2(Graphics g, int frame, movement[] confetti) { //--------------------------------------VIDEO 2-----------------------------------------------------------
-		g.fillRect(10, 30, 700, 400); //video box
-
 		//--------------------------------------------------------------------------BG-----------------------------------------------------------
 		for(int i = 0; i < 255; i++) {
 			Color abc =  new Color (i,255,0);
@@ -300,8 +294,17 @@ public class NewYearPanel extends JPanel {
 
 	}
 
-	private void video3(Graphics g, int frame, movement[] confetti) { //--------------------------------------VIDEO 2-----------------------------------------------------------
+	private void video3(Graphics g, int frame) { //--------------------------------------VIDEO 2-----------------------------------------------------------
+		g.setColor(Color.black);
 		g.fillRect(10, 30, 700, 400); //video box
+		//DialogInput
+
+		g.setColor(Color.white);
+		g.setFont(new Font("Arial", Font.PLAIN, 20)); //URL
+
+		g.drawString("Merry Christmas!", 50, 230); 
+
+
 
 	}
 
