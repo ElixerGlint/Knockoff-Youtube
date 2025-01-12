@@ -285,7 +285,7 @@ public class NewYearPanel extends JPanel {
 		g.setColor(accentcolor);
 
 		for(int i = 0 ; i < confetti.length; i++) {
-			g.fillRect(confetti[i].getX(), confetti[i].getY(), 60, 20);
+			g.fillRect(confetti[i].getX(), confetti[i].getY()-10, 60, 20);
 
 
 			confetti[i].move();
@@ -297,15 +297,6 @@ public class NewYearPanel extends JPanel {
 		g.drawString("HAPPY NEW YEAR!", 29, 250);
 		g.setColor(Color.white);
 		g.drawString("HAPPY NEW YEAR!", 32, 253);
-
-		for(int i = 0; i < confetti.length; i++) {
-			if(confetti[i].getX() < 20) {
-				
-			}
-
-		}
-
-
 
 	}
 
