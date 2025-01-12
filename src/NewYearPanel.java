@@ -300,7 +300,14 @@ public class NewYearPanel extends JPanel {
 
 	}
 
+	private void video3(Graphics g, int frame, movement[] confetti) { //--------------------------------------VIDEO 2-----------------------------------------------------------
+		g.fillRect(10, 30, 700, 400); //video box
 
+	}
+
+
+
+	
 
 	private void drawdesc(Graphics g) {
 		g.setColor(Color.lightGray);
@@ -325,7 +332,7 @@ public class NewYearPanel extends JPanel {
 			g.drawString("on nature.", 11, 500 + (20) * 11);
 			g.drawString("-- Santa Clause", 11, 500 + (20) * 12);
 		}
-		
+
 		if(whichvid == 2) {
 			g.drawString("Experience the magic of a vibrant rainbow confetti fall! This enchanting video", 11, 500 + (20) * 1);
 			g.drawString("captures the joy and excitement of a celebration as colorful confetti pieces", 11, 500 + (20) * 2);
