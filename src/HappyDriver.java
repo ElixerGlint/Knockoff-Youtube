@@ -28,7 +28,7 @@ public class HappyDriver {
 			accentcol = JColorChooser.showDialog(null, "What color do you want the accent to be?", Color.black); //first thing
 		}
 		if(vidselection == 3) {
-			accentcol = JColorChooser.showDialog(null, "What color do you want the accent to be?", Color.black); //first thing
+			accentcol = JColorChooser.showDialog(null, "What color do you want the accent to be?", Color.white); //first thing
 		}
 		
 

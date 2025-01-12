@@ -299,16 +299,49 @@ public class NewYearPanel extends JPanel {
 		g.fillRect(10, 30, 700, 400); //video box
 		//DialogInput
 
+		g.setFont(new Font("Lucida Handwriting", Font.BOLD, 80));
+		g.setColor(accentcolor);
+
+		g.drawString("Happy", 60, 180); 
+		g.drawString("Holidays", 230, 300); 
+
+		g.setColor(Color.blue);
+		g.drawString("-GHS", 380, 400); 
+
 		g.setColor(Color.white);
-		g.setFont(new Font("Arial", Font.PLAIN, 20)); //URL
-
-		g.drawString("Merry Christmas!", 50, 230); 
-
-
-
+		if(frame%10 < 5) {
+			drawsnowflake(g, 80, 80, frame % 10 + 5);
+			drawsnowflake(g, 280, 80, frame % 10 * 5);
+			drawsnowflake(g, 550, 130, frame % 10 * 20);
+			drawsnowflake(g, 170, 270, frame % 10 * 10);
+			drawsnowflake(g, 660, 370, frame % 10 * 7);
+			drawsnowflake(g, 300, 340, frame % 10 * 3);
+			drawsnowflake(g, 80, 380, frame % 10 * 10);
+		}
+		else {
+			drawsnowflake(g, 80, 80, 30 - frame%10 * 5);
+			drawsnowflake(g, 280, 80, 45 - frame%10 * 5);
+			drawsnowflake(g, 550, 130, 200 - frame % 10 * 20);
+			drawsnowflake(g, 170, 270, 100 - frame % 10 * 10);
+			drawsnowflake(g, 660, 370, 70 - frame % 10 * 7);
+			drawsnowflake(g, 300, 340, 30 - frame % 10 * 3);
+			drawsnowflake(g, 80, 380, 100 - frame % 10 * 10);
+		}
+		
+		
+		try {
+			Thread.sleep(20);
+		} catch (Exception e) {
+		}
+		
 	}
 
-
+	private void drawsnowflake (Graphics g, int x, int y, int stretch) {
+		g.drawLine(x-stretch, y-stretch, x+stretch, y+stretch);
+		g.drawLine(x+stretch, y-stretch, x-stretch, y+stretch);
+		g.drawLine(x, y-stretch, x, y+stretch);
+		g.drawLine(x-stretch, y, x+stretch, y);
+	}
 
 	
 
