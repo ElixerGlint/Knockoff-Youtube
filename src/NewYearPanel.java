@@ -72,7 +72,7 @@ public class NewYearPanel extends JPanel {
 			frame++;
 		}
 		if(whichvid == 3) {
-			video2(g, frame);
+			video3(g, frame);
 			frame++;
 		}
 	}
