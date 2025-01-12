@@ -325,6 +325,21 @@ public class NewYearPanel extends JPanel {
 			g.drawString("on nature.", 11, 500 + (20) * 11);
 			g.drawString("-- Santa Clause", 11, 500 + (20) * 12);
 		}
+		
+		if(whichvid == 2) {
+			g.drawString("Experience the magic of a vibrant rainbow confetti fall! This enchanting video", 11, 500 + (20) * 1);
+			g.drawString("captures the joy and excitement of a celebration as colorful confetti pieces", 11, 500 + (20) * 2);
+			g.drawString("gently float downwards against a stunning rainbow backdrop. The camera pans", 11, 500 + (20) * 3);
+			g.drawString("across the screen, showcasing the delicate movement of the confetti as it", 11, 500 + (20) * 4);
+			g.drawString("drifts lazily through the air. The rainbow hues perfectly complement the", 11, 500 + (20) * 5);
+			g.drawString("pastel shades of the confetti, creating a visually striking contrast that", 11, 500 + (20) * 6);
+			g.drawString("pops against the neutral background. Perfect for adding a touch of whimsy", 11, 500 + (20) * 7);
+			g.drawString("and festivity to any project, this video is ideal for wishing others that,", 11, 500 + (20) * 8);
+			g.drawString("you may know a happy, happy new year. The new year man posted this video,", 11, 500 + (20) * 9);
+			g.drawString("he is a recent global phenomenon due to his work with wishing everbody he", 11, 500 + (20) * 10);
+			g.drawString("knows a happy new year.", 11, 500 + (20) * 11);
+			g.drawString("-- The Happy New Year Man", 11, 500 + (20) * 12);
+		}
 	}
 
 	private void drawvideobox(Graphics g) {
