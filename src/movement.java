@@ -1,8 +1,22 @@
+/**
+    * This represents the moveable objects that go right and left across the screen
+    * @param x The initial x-coordinate
+    * @param y The initial y-coordinate
+    * @author Everett
+    */
 public class movement {
     private int x;
     private int y;
 
+
+
+    /**
+    * Constructs a new Movement object with initial x and y coordinates.
+    * @param x The initial x-coordinate
+    * @param y The initial y-coordinate
+    */
     public movement(int x, int y) {
+        
         this.x = x;
         this.y = y;
     }
