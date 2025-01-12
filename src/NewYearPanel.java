@@ -16,6 +16,7 @@ public class NewYearPanel extends JPanel {
 	private int frame;
 	private int commentsslidervalue;
 	private Color accentcolor;
+	//initialization
 	String[] commentspossible = new String[20];
 	movement tempflake1 = new movement((int)(Math.random()*550) + 70, 230);
 	movement tempflake2 = new movement((int)(Math.random()*550) + 70, 250);
