@@ -383,6 +383,21 @@ public class NewYearPanel extends JPanel {
 			g.drawString("knows a happy new year.", 11, 500 + (20) * 11);
 			g.drawString("-- The Happy New Year Man", 11, 500 + (20) * 12);
 		}
+
+		if (whichvid == 3)  {
+			g.drawString("A simple winter scene featuring snowflakes that grow and shrink. The", 11, 500 + (20) * 1);
+			g.drawString("video displays the phrase 'Happy Holidays' against a blank", 11, 500 + (20) * 2);
+			g.drawString("background. Snowflakes appear, enlarge, and then disappear. The", 11, 500 + (20) * 3);
+			g.drawString("animation repeats continuously. There's no sound or additional", 11, 500 + (20) * 4);
+			g.drawString("effects beyond the snowflakes. The video runs for approximately 3", 11, 500 + (20) * 5);
+			g.drawString("minutes. It's suitable as a quiet screensaver or background for", 11, 500 + (20) * 6);
+			g.drawString("social media posts during the holiday season. The content is", 11, 500 + (20) * 7);
+			g.drawString("straightforward and lacks complexity, focusing solely on the", 11, 500 + (20) * 8);
+			g.drawString("described snowflake animation and text.", 11, 500 + (20) * 9);
+			g.drawString("", 11, 500 + (20) * 10);
+			g.drawString("", 11, 500 + (20) * 11);
+			g.drawString("-- Glastonbury High School", 11, 500 + (20) * 12);
+		}
 	}
 
 	private void drawvideobox(Graphics g) {
