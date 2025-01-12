@@ -40,6 +40,9 @@ public class NewYearPanel extends JPanel {
 	/**
     * This is the consructor of the NewYearPanel class
 	* @return The NewYearPanel class constructed
+	* @param c the backgrounds color
+	* @param watvid the video selection (1-3)
+	* @param secondcolor the accent color
     * @author Everett
     */
 	public NewYearPanel(Color c, int watvid, Color secondcolor) {
@@ -117,6 +120,7 @@ public class NewYearPanel extends JPanel {
 
 	/**
     * Prints the outline/ the web browser box
+	* @param g the graphics class
     * @author Everett
     */
 	private void printoutline(Graphics g) {
@@ -409,7 +413,6 @@ public class NewYearPanel extends JPanel {
 		g.drawLine(x-stretch, y, x+stretch, y);
 	}
 
-	
 	/**
     * This function draws the description of the video
 	* @param g the graphics class
@@ -490,7 +493,7 @@ public class NewYearPanel extends JPanel {
 	public int getCommentsslidervalue() {
 		return commentsslidervalue;
 	}
-	public void setCommentsslidervalue(int commentsslidervalue) {
-		this.commentsslidervalue = commentsslidervalue;
+	public void setCommentsslidervalue(int comslid) {
+		this.commentsslidervalue = comslid;
 	}
 }
